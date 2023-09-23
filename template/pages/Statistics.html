@@ -1,0 +1,61 @@
+<div id="statisticsPage">
+    <div class="alert alert-info">
+        Click on the flags/images to get more details
+    </div>
+    <div style="margin: auto; width: 200px; text-align: center; margin-bottom: 10px;">
+        <a class="btn btn-outline-danger" onclick="resetAllStats()">{{Lang.buttons.resetAll}}</a>
+    </div>
+    <div id="stats">
+        <div class="delegation">
+            <div class=""></div>
+            <div class="times progress-bar progress-bar-striped" data-time="900">
+                <div class="time  time-general" data-total="900" data-time="300">{{Lang.labels.general}}</div>
+                <div class="time  time-special" data-total="900" data-time="300">{{Lang.labels.special}}</div>
+                <div class="time  time-moderated" data-total="900" data-time="300">{{Lang.labels.moderated}}</div>
+                <div class="time-total">{{Lang.labels.total}}</div>
+            </div>
+            
+        </div>
+        <hr class="text-break" />
+        {% for delegation in delegations %}
+            <div class="delegation">
+                {% set stats = delegation.stats %}
+                {% set votes = getVotes(delegation.id) %}
+                <div class="flag" >
+                    <a class="fa fa-refresh btn btn-danger" onclick="resetStatsFor('{{delegation.id}}')"></a>
+
+                    <img src="{{delegation.flag}}" onclick="collpase('c{{delegation.id}}')"/>
+                </div>
+                
+                <div class="times progress-bar progress-bar-striped" data-time="{{stats.total}}">
+                    <div class="time  time-general" data-total="{{stats.total}}" data-time="{{stats.general}}">{{time(stats.general)|raw}}</div>
+                    <div class="time  time-special" data-total="{{stats.total}}" data-time="{{stats.special}}"> {{time(stats.special)|raw}}</div>
+                    <div class="time  time-moderated" data-total="{{stats.total}}" data-time="{{stats.moderated.time}}">  {{time(stats.moderated.time)|raw}}</div>
+                    <div class="time-total">{{time(stats.total)|raw}}</div>
+                </div>
+            </div>
+            <div class="details"  id="c{{delegation.id}}">    
+                <div class="voteData">
+                    <div>{{Lang.labels.sessname}}</div>
+                    <div>{{Lang.labels.conftype}}</div>
+                    <div>{{Lang.labels.voted}}</div>
+                    <div>{{Lang.labels.date}}</div> 
+                </div>
+                {% for vote in votes %}
+                    <div class="voteData">
+                        <div>{{vote.session_name}}</div>
+                        <div>{{Lang.labels["vote_"~vote.vote_type]}}</div>
+                        <div>{{Lang.labels["vote_"~(vote.results[delegation.id]|upper)]}}</div>
+                        <div>{{getDate(vote)}}</div> 
+                        
+                    </div>
+                {% endfor %}
+
+            </div>
+            <hr class="text-break" />
+        {% endfor %}
+    </div>
+
+</div>
+
+<script>loadStats()</script>

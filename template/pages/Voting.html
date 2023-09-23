@@ -1,0 +1,120 @@
+{% if SESSION.logged %}
+<script async>
+    window.number = {{number}};
+    getTopic(1)
+    initResets()
+    initTally()
+</script>
+<div id="votingPage">
+    <div id="head" class="">
+        <div class="input ">
+            <label for="voteFor">{{Lang.labels.conftype}}</label>
+            <select id="voteFor">
+                <option value="g" {% if SESSION.vlast_visited == "General" %} selected {% endif %}>{{Lang.titles.general}}</option>
+                <option value="s" {% if SESSION.vlast_visited == "Special" %} selected {% endif %}>{{Lang.titles.special}}</option>
+                <option value="m" {% if SESSION.vlast_visited == "ModCaucus" %} selected {% endif %}>{{Lang.titles.modcaucus}}</option>
+                <option value="u" {% if SESSION.vlast_visited == "UnmodCaucus" %} selected {% endif %}>{{Lang.titles.unmodcaucus}}</option>
+            </select>
+        </div>
+        <div class="input">
+            <label for="session">{{Lang.labels.sessname}}</label>
+            <input id="session" value="">
+        </div>
+        
+    </div>
+    <div id="roundContainer">
+        <div id="round">{{Lang.labels.roundA}}</div>
+        <div><a class="btn btn-warning"     id="resetRound">{{Lang.buttons.reset}}</a></div>
+        <div><a class="btn btn-outline-warning" onclick="resetAll();" id="resetAll">{{Lang.buttons.resetAll}}</a></div>
+    </div>
+    <div class="container">
+        <div id="delegations">
+            <div class="delegation"> 
+                <span>  </span>
+                <i>Y</i>
+                <i>N</i>
+                <i class="second third">Y/R</i>
+                <i class="second third">N/R</i>
+                <i class="second third">P</i>
+                <i class="second">A</i>
+            </div>
+            {% for delegation in delegations %}
+            
+            <div class="delegation" id="v{{delegation.id}}"> 
+                <span>{{delegation.name}}</span>
+                <i class="fa fa-thumbs-up" onclick="vote('y', '{{delegation.id}}')"></i>
+                <i class="fa fa-thumbs-down" onclick="vote('n', '{{delegation.id}}')"></i>
+                <i class="fa fa-thumbs-o-up second third" onclick="vote('yr', '{{delegation.id}}')"></i>
+                <i class="fa fa-thumbs-o-down second third" onclick="vote('nr', '{{delegation.id}}')"></i>
+                <i class="fa fa-fast-forward second third" onclick="vote('p', '{{delegation.id}}')"></i>
+                <i class="fa fa-stop-circle second" onclick="vote('a', '{{delegation.id}}', {{delegation.rollcall.voting}})"></i>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="voteResults"  >
+            <div id="votesY">
+                <div>{{Lang.labels.vote_YES}} <div class="count"></div></div>
+                <div class="votes"></div>
+            </div>
+            <div id="votesN">
+                <div>{{Lang.labels.vote_NO}} <div class="count"></div></div>
+                <div class="votes"></div>
+            </div>
+            <div id="votesYR">
+                <div>{{Lang.labels.vote_YESR}} <div class="count"></div></div>
+                <div class="votes"></div>
+            </div>
+            <div id="votesNR">
+                <div>{{Lang.labels.vote_NOR}} <div class="count"></div></div>
+                <div class="votes"></div>
+            </div>
+            <div id="votesA">
+                <div>{{Lang.labels.vote_ABSTAIN}} <div class="count"></div></div>
+                <div class="votes"></div>
+            </div>
+        </div> 
+         <div id="summary">
+            <div class="delegation" id="thead"> 
+                <span> </span>
+                <div class="round-1">{{Lang.labels.roundA}}</div>
+                <div class="round-2">{{Lang.labels.roundB}}</div>
+                <div class="round-3">{{Lang.labels.roundC}}</div>
+            </div>
+            {% for delegation in delegations %}
+            
+            <div class="delegation" id="Rv{{delegation.id}}"> 
+                <span>{{delegation.name}} {% if delegation.rollcall.voting == "true" %}*{% endif %}</span>
+                <div class="roundsum round-1"></div>
+                <div class="roundsum round-2"></div>
+                <div class="roundsum round-3"></div>
+            </div>
+            {% endfor %}
+            <div style="margin: auto; width: 100%;" class="badge badge-pill " id="tfoot"> 
+                (*) This delegation is marked "Present and Voting" and it CANNOT abstain
+            </div>
+            <div class="delegation results"> 
+                <span>{{Lang.labels.count_present}}</span>
+                <div class=" round-count">{{delegations|length}}</div>
+            </div>
+            <div class="delegation results"> 
+                <span>{{Lang.labels.count_yes}}</span>
+                <div class="roundyes round-count-1">0</div>
+                <div class="roundyes round-count-2">0</div>
+                <div class="roundyes round-count-3 final">0</div>
+            </div>
+            <div class="delegation results"> 
+                <span>{{Lang.labels.count_no}}</span>
+                <div class="roundno round-count-1">0</div>
+                <div class="roundno round-count-2">0</div>
+                <div class="roundno round-count-3 final">0</div>
+            </div>
+            
+        </div> 
+        
+
+    </div>
+    
+<div id="summaryClone"></div>
+<a class="btn btn-primary" id="getTally">Get Tally</a>
+</div>
+{% endif %}

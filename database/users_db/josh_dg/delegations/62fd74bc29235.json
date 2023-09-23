@@ -1,0 +1,13 @@
+{
+    "__created_at": 1660777660,
+    "__updated_at": 1660786389,
+    "data": {
+        "name": "Canada",
+        "flag": "flags/canada-flag-country-nation-union-empire-32938.svg",
+        "id": "62fd74bc29235",
+        "rollcall": {
+            "present": "false",
+            "voting": "false"
+        }
+    }
+}

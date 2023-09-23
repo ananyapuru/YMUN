@@ -1,0 +1,22 @@
+{
+    "__created_at": 1673899899,
+    "__updated_at": 1673900336,
+    "data": {
+        "name": "France",
+        "flag": "flags/saint-barthlemy-flag-country-nation-union-empire-33068.svg",
+        "id": "63c5af7b2ea5a",
+        "rollcall": {
+            "present": "true",
+            "voting": "false"
+        },
+        "stats": {
+            "general": 23,
+            "special": null,
+            "moderated": {
+                "63c5b0eedd99d": 44,
+                "time": 44
+            },
+            "total": 67
+        }
+    }
+}

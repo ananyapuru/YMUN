@@ -1,0 +1,22 @@
+{% if SESSION.logged %}
+
+<div id="delegations">
+    <div class="delegation">
+        <a id="addDelegation" data-toggle="modal" data-target="#new-delegation" class="btn btn-success">
+        <i class="fa fa-plus-square-o"></i> {{Lang.buttons.add_delegation}}</a>
+    </div> 
+    <div id="delegationsList">
+        {% for delegation in delegations %}
+            <div class="delegation-item">
+                <div><img src="{{delegation.flag}}" alt="{{delegation.name}}" /></div>
+                <div class="delegation-details">
+                    <div>{{delegation.name}}</div>
+                    <div><i class="fa fa-trash-o delete" onclick="deleteDelegation(this)" data-id="{{delegation.id}}"></i></div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+    
+{% endif %}

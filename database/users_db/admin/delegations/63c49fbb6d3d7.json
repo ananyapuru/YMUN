@@ -1,0 +1,19 @@
+{
+    "__created_at": 1673830331,
+    "__updated_at": 1673898450,
+    "data": {
+        "name": "Bay",
+        "flag": "flags/canada-flag-country-nation-union-empire-32938.svg",
+        "id": "63c49fbb6d3d7",
+        "rollcall": {
+            "present": "false",
+            "voting": "false"
+        },
+        "stats": {
+            "general": 6,
+            "special": null,
+            "moderated": null,
+            "total": 6
+        }
+    }
+}

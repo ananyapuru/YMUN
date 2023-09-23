@@ -1,0 +1,26 @@
+<script async>
+    window.c = 'u'; 
+    reset();
+</script>
+<div id="controls">
+    <a onclick="start()">{{Lang.buttons.start}}</a>
+    <a onclick="pause()">{{Lang.buttons.pause}}</a>
+    <a onclick="resetTotal()">{{Lang.buttons.reset}}</a>
+    <div class="input">
+        <label for="timerTotal">{{Lang.labels.total}}</label>
+        <input id="timerTotal" onkeyup="updateTimerTotal()" onchange="updateTimerTotal()" type="number" min="0" value="{{committee.default_total_time}}" />
+    </div>
+</div>
+
+ 
+<div id="ugeneralPage" class="">
+    <div id="mainFrame">
+       <div id="speakerCounter" class="unmod">
+           <div id="progressContainerTotal" class="progress-bar-striped">
+            <div id="progressLabelTotal">00:00</div>
+               <div id="progressTotal" class="progress-bar-striped progress-bar">
+               </div>
+            </div>
+       </div>
+    </div>
+</div>

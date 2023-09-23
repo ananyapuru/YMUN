@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <title>{{ title }}</title>
+  {{ include('meta.html') }}
+  {{ include('icons.html') }}
+  {{ include('fonts.html') }}
+  {{ include('stylesheets.html') }}
+
+</head>
+ 
+<body> 
+    {{ include("sections/header.html") }}
+    {{ include("sections/sidebar.html") }}
+    <div id="content"></div>
+    <div id="loading">
+      <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    {{ include("sections/modal.html") }}
+    {{ include("sections/footer.html") }}
+    {{ include('javascript.html') }}
+</body>
+</html>

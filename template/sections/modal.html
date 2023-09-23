@@ -1,0 +1,73 @@
+<div id="global-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="new-delegation" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{Lang.titles.adding_delegation}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body form default-form">
+            <div class="input">
+              <label for="delegation-name">{{Lang.labels.delegation_name}}</label>
+              <input class="u" id="delegation-name" type="text" />
+            </div>
+            <div class="input">
+              <label for="delegation-photo">{{Lang.labels.delegation_photo}}</label>
+              <a id="selectFlagBtn" data-toggle="modal" data-target="#select-flag" onclick="loadFlags(30, 0)"><i class="btn btn-success">{{Lang.buttons.click}}</i></a>
+              <input type="hidden" id="delegation-flag" /> 
+            </div>
+            <div class="input">
+              <label >{{Lang.labels.delegation_uphoto}}</label>
+              <label for="uploader"  style="text-align: center !important; border: none;"><i class="btn btn-outline-primary">{{Lang.buttons.upload}}</i></label>
+              <form id="uploaderForm" enctype="multipart/form-data" method="post" name="uploaderForm">
+                <input type="file" style="width: 0px; visibility: hidden; display: none;" id="uploader" /> 
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="addDelegation">{{Lang.buttons.add}}</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{Lang.buttons.close}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="select-flag" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="flags">
+            
+        </div> 
+        <div class="modal-footer">
+          <a href="https://iconscout.com/icon-pack/country-flags" target="_blank">Country Flags Icon Pack</a> by <a href="https://iconscout.com/contributors/iconscout" target="_blank">Iconscout Freebies</a>
+
+        </div> 
+    </div>
+  </div>

@@ -1,0 +1,28 @@
+{
+    "__created_at": 1604459732,
+    "__updated_at": 1604459732,
+    "data": {
+        "id": "5fa21cd4f34e9",
+        "session_name": "SYRIAN CIVIL WAR",
+        "vote_type": "m",
+        "results": {
+            "voted": [
+                "5f7590a3727d9",
+                "5f75908df0469",
+                "5f7590bddf4c5",
+                "5fa21c91beb9b"
+            ],
+            "passed": [],
+            "y": 3,
+            "yr": [],
+            "n": 1,
+            "nr": [],
+            "p": [],
+            "a": [],
+            "5f7590a3727d9": "y",
+            "5f75908df0469": "n",
+            "5f7590bddf4c5": "y",
+            "5fa21c91beb9b": "y"
+        }
+    }
+}

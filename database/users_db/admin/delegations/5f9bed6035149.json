@@ -1,0 +1,13 @@
+{
+    "__created_at": 1604054368,
+    "__updated_at": 1673896668,
+    "data": {
+        "name": "United States of America",
+        "flag": "flags/united-states-of-minor-outlying-islands-flag-country-nation-union-empire-33137.svg",
+        "id": "5f9bed6035149",
+        "rollcall": {
+            "present": "false",
+            "voting": "false"
+        }
+    }
+}

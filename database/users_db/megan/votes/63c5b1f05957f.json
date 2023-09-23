@@ -1,0 +1,26 @@
+{
+    "__created_at": 1673900528,
+    "__updated_at": 1673900528,
+    "data": {
+        "id": "63c5b1f05957f",
+        "session_name": "Megan is so cool",
+        "vote_type": "m",
+        "results": {
+            "voted": [
+                "63c5af7b2ea5a",
+                "63c5af71c7adb",
+                "63c5af63ee646"
+            ],
+            "passed": [],
+            "y": 3,
+            "yr": [],
+            "n": [],
+            "nr": [],
+            "p": [],
+            "a": [],
+            "63c5af7b2ea5a": "y",
+            "63c5af71c7adb": "y",
+            "63c5af63ee646": "y"
+        }
+    }
+}

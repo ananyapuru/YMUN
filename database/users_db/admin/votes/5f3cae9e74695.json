@@ -1,0 +1,28 @@
+{
+    "__created_at": 1597812382,
+    "__updated_at": 1597812382,
+    "data": {
+        "id": "5f3cae9e74695",
+        "session_name": "Maya",
+        "vote_type": "g",
+        "results": {
+            "voted": [
+                "5f3a724023524",
+                "5f3a4770b84c7",
+                "5f3cadb0658ec",
+                "5f3cadbdcc0f4"
+            ],
+            "passed": [],
+            "y": 2,
+            "yr": [],
+            "n": 2,
+            "nr": [],
+            "p": [],
+            "a": [],
+            "5f3a724023524": "n",
+            "5f3a4770b84c7": "n",
+            "5f3cadb0658ec": "y",
+            "5f3cadbdcc0f4": "y"
+        }
+    }
+}

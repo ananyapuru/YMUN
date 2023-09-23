@@ -1,0 +1,23 @@
+{
+    "__created_at": 1601540285,
+    "__updated_at": 1673896668,
+    "data": {
+        "name": "Japan",
+        "flag": "flags/japan-flag-country-nation-union-empire-33001.svg",
+        "id": "5f7590bddf4c5",
+        "rollcall": {
+            "present": "false",
+            "voting": "false"
+        },
+        "stats": {
+            "general": 15,
+            "special": null,
+            "moderated": {
+                "5f9bee1cc553a": 13,
+                "time": 18,
+                "6371c3bd6b2e2": 5
+            },
+            "total": 33
+        }
+    }
+}

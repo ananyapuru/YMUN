@@ -1,0 +1,19 @@
+{
+    "__created_at": 1673899889,
+    "__updated_at": 1673900113,
+    "data": {
+        "name": "Turkey",
+        "flag": "flags/turkey-flag-country-nation-union-empire-33109.svg",
+        "id": "63c5af71c7adb",
+        "rollcall": {
+            "present": "true",
+            "voting": "false"
+        },
+        "stats": {
+            "general": 13,
+            "special": null,
+            "moderated": null,
+            "total": 13
+        }
+    }
+}

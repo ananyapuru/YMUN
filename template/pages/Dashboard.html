@@ -1,0 +1,45 @@
+    {% if not SESSION.logged %}
+        <div class="alert-warning alert">{{Lang.messages.login_needed}} </div>
+        <div id="loginForm" class="form">
+            <h1>{{Lang.titles.login}}</h1>
+            <div class="input">
+                <label for="username">{{Lang.labels.username}}</label>
+                <input type="text" id="username" minlength="5" required/>
+            </div>
+            <div class="input">
+                <label for="password">{{Lang.labels.password}}</label>
+                <input type="password" id="password" minlength="8" required/>
+            </div>
+            <button class="btn btn-success" id="login-btn" onclick="Login()">{{Lang.buttons.login}}</button>
+        </div>
+        {% else %}
+        <div id="dashboardMenu">
+            <div id="dashboardMenuContainer">
+                <div onclick="loadDPage('Delegations', 1)">{{Lang.dashboard.delegations}}</div>
+                <div onclick="loadDPage('Committee', 1)">{{Lang.dashboard.committee}}</div>
+                <div onclick="loadDPage('Credentials', 1)">{{Lang.dashboard.credentials}}</div> 
+                <div onclick="window.location.href = '?log=out';">{{Lang.titles.logout}}</div>
+
+            </div>
+        </div>
+        <div id="dashboardPage">
+            <div id="delegations">
+                <div class="delegation">
+                    <a id="addDelegation" data-toggle="modal" data-target="#new-delegation" class="btn btn-success">
+                    <i class="fa fa-plus-square-o"></i> {{Lang.buttons.add_delegation}}</a>
+                </div> 
+                <div id="delegationsList">
+                    {% for delegation in delegations %}
+                        <div class="delegation-item">
+                            <div><img src="{{delegation.flag}}" alt="{{delegation.name}}" /></div>
+                            <div class="delegation-details">
+                                <div>{{delegation.name}}</div>
+                                <div><i class="fa fa-trash-o delete" onclick="deleteDelegation(this)" data-id="{{delegation.id}}"></i></div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+        </div>
+    {% endif %}

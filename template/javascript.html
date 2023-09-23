@@ -1,0 +1,14 @@
+<script src="{{ fs.lib.jquery.js }}"></script>
+<script src="{{ fs.lib.jqueryui.js }}"></script>
+<script src="{{ fs.lib.easytimer.js }}"></script>
+<script src="{{ fs.lib.app.mjs }}{{ hash }}" ></script>
+<script src="{{ fs.lib.jquerymigrate.js }}"></script>
+<script src="{{ fs.lib.bootstrap.js }}"></script>
+<script src="{{ fs.lib.html2canvas.js }}"></script>
+<script src="{{ fs.lib.filesaver.js }}"></script>
+<script> loadPage("{{SESSION.last_visited}}"); </script>
+ 
+{% if SESSION.last_visited == 'Dashboard' %}
+<script> loadDPage("Delegations" , true); </script> 
+
+{% endif %}

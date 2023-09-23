@@ -1,0 +1,24 @@
+{
+    "__created_at": 1597781214,
+    "__updated_at": 1597781214,
+    "data": {
+        "id": "5f3c34de3fde9",
+        "session_name": "kabbir",
+        "vote_type": "g",
+        "results": {
+            "voted": [
+                "5f3a724023524",
+                "5f3a4770b84c7"
+            ],
+            "passed": [],
+            "y": 1,
+            "yr": [],
+            "n": 1,
+            "nr": [],
+            "p": [],
+            "a": [],
+            "5f3a724023524": "n",
+            "5f3a4770b84c7": "y"
+        }
+    }
+}

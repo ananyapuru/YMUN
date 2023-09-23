@@ -1,0 +1,9 @@
+{
+    "__created_at": 1660777684,
+    "__updated_at": 1660777684,
+    "data": {
+        "name": "DISEC",
+        "default_speaking_time": "60",
+        "default_total_time": "90"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "__created_at": 1597665942,
+    "__updated_at": 1597665942,
+    "data": {
+        "id": "5f3a72966b49c",
+        "session_name": "Cheems",
+        "vote_type": "m",
+        "results": {
+            "voted": [
+                "5f3a724023524",
+                "5f3a4770b84c7"
+            ],
+            "passed": [],
+            "y": [],
+            "yr": [],
+            "n": 2,
+            "nr": [],
+            "p": [],
+            "a": [],
+            "5f3a724023524": "n",
+            "5f3a4770b84c7": "n"
+        }
+    }
+}

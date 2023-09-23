@@ -1,0 +1,76 @@
+<script async>
+    window.c = 'm'; 
+    reset();
+    getTopic()
+</script>
+<div id="controls">
+    <a onclick="demandTopic()" > {{Lang.buttons.topic}}</a>
+    <a onclick="start()">{{Lang.buttons.start}}</a>
+    <a onclick="pause()">{{Lang.buttons.pause}}</a>
+    <a onclick="_yield()">{{Lang.buttons.yield}}</a>
+    <a onclick="reset()">{{Lang.buttons.reset}}</a>
+    <a onclick="next()">{{Lang.buttons.next}}</a> 
+    <div class="input">
+        <label for="timerTo">{{Lang.labels.speaking}}</label>
+        <input id="timerTo" onkeyup="updateTimer()" onchange="updateTimer()" type="number" min="0" value="{{committee.default_speaking_time}}" />
+    </div>
+    <div class="input">
+        <label for="timerTotal">{{Lang.labels.total}}</label>
+        <input id="timerTotal" onkeyup="updateTimerTotal()" onchange="updateTimerTotal()" type="number" min="0" value="{{committee.default_total_time}}" />
+    </div>
+</div>
+
+<div id="topicContainer" class="input">
+    <span id="topic"></span>
+</div>
+<div id="generalPage" class="">
+    <div id="delegationsSelectList">
+        <input  onkeyup="search(this)" onchange="search(this)"  onclick="search(this)" type="search" placeholder="Search..."/>
+        <div id="results">
+        {% for delegation in delegations %}
+            <div class="delegation">
+                <img src="{{delegation.flag}}" />
+                <span>{{delegation.name}}</span>
+                <i class="fa fa-plus-square" onclick="addToSpeaking('{{delegation.id}}')"></i>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div id="mainFrame">
+       <div id="speakerCounter">
+           <div id="progressContainer" class="progress-bar-striped">
+            <div id="progressLabel">00:00</div>
+               <div id="progress" class="progress-bar-striped progress-bar">
+               </div>
+            </div>
+            
+           <div id="progressContainerTotal" class="progress-bar-striped">
+            <div id="progressLabelTotal">00:00</div>
+               <div id="progressTotal" class="progress-bar-striped progress-bar">
+               </div>
+            </div>
+       </div>
+       <div id="speaker">
+        <div id="speakerFlag"></div>
+        <div id="speakerName">{{Lang.messages.select}}</div>
+       </div>
+    </div>
+    <div id="speakingList">
+        
+    </div>
+</div>
+
+<div id="select-topic" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+        </div> 
+    </div>
+  </div>

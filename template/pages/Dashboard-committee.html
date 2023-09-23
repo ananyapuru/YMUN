@@ -1,0 +1,25 @@
+{% if SESSION.logged %}
+<div id="committee" class="form">
+    <div class="input">
+        <label for="committee-name">{{Lang.labels.committee_name}}</label>
+        <input class="u" type="text" id="committee-name" value="{{committee.name}}"/>
+    </div> 
+    <div class="input">
+        <label  for="default-speaking-time">{{Lang.labels.default_speaking_time}}</label>
+        <input class="u" type="number" min="1" id="default-speaking-time" value="{{committee.default_speaking_time}}" />
+    </div> 
+    <div class="input">
+        <label for="default-total-time">{{Lang.labels.default_total_time}}</label>
+        <input  class="u" type="number" min="1" id="default-total-time" value="{{committee.default_total_time}}" />
+    </div> 
+    <div class="input">
+        <span></span>
+        <button class="btn btn-outline-success" onclick="saveCommittee()">{{Lang.buttons.save}}</button>
+    </div> 
+    <div class="alert-info alert">
+        {{Lang.messages.empty_fields}}
+    </div>
+</div>
+{% else %}
+    
+{% endif %}

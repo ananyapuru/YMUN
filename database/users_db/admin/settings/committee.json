@@ -1,0 +1,9 @@
+{
+    "__created_at": 1597678158,
+    "__updated_at": 1673899769,
+    "data": {
+        "name": "Squid Game",
+        "default_speaking_time": "100",
+        "default_total_time": "1000"
+    }
+}

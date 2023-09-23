@@ -1,0 +1,14 @@
+<div id="delegationsPresent" class="container">
+    <h1 class="modal-title">{{Lang.titles.presence}}</h1>
+    <div id="delegationsPresentList">
+        {% for delegation in delegations %}
+            <div class="delegation">
+                <span>{{delegation.name}}</span>
+                <input id="present-{{delegation.id}}" type="checkbox" hidden {% if delegation.rollcall.present == "true" %} checked {% endif %} />
+                <label class="pcheck" data-id="{{delegation.id}}"  for="present-{{delegation.id}}" >{{Lang.labels.present}}</label>
+                <input id="voting-{{delegation.id}}" type="checkbox" hidden {% if delegation.rollcall.voting == "true" %} checked {% endif %}/>
+                <label class="vcheck" for="voting-{{delegation.id}}" data-id="{{delegation.id}}">{{Lang.labels.voting}}</label>
+            </div>
+        {% endfor %}
+    </div>
+</div>
